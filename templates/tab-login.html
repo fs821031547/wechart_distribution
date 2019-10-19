@@ -1,0 +1,135 @@
+
+<ion-view view-title="登录" class="login">
+    <style>
+        /*.view-container{*/
+        /*position: relative;*/
+        /*}*/
+        /*.view-container{*/
+        /*z-index: -5;*/
+        /*}*/
+        .login .wrapper{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            /*background: #fffded url("img/denglv_bg.png") no-repeat center bottom / 100%;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+        }
+        .login .container{
+            display: inline-block;
+            margin: 0 55px;
+            flex: 1;
+            margin-top: 100px;
+        }
+        .login .first{
+            height: 58px;
+            border-bottom: 1px solid #d3cdc1;
+            padding-top: 20px;
+            position: relative;
+        }
+        .login input[type="tel"]
+        {
+            background: transparent;
+            font-size: 14px;
+            color: #695e58;
+            padding-top: 0;
+        }
+        .login input[type="password"]
+        {
+            background: transparent;
+            font-size: 14px;
+            color: #695e58;
+            padding-top: 0;
+            display: inline-block;
+        }.login input[type="tel"]
+         {
+             background: transparent;
+             font-size: 14px;
+             color: #695e58;
+             padding-top: 0;
+             display: inline-block;
+         }
+        .login .first a.button-clear.button-clear{
+            color: #fff;
+            background: #eb5414;
+            max-height: 30px;
+            min-height: 30px;
+            line-height: 30px;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            position: absolute;
+            right: 0;
+            font-size: 14px;
+        }
+        .login .third a.button-clear.button-clear{
+            color: #fff;
+            background: #eb5414;
+            width: 100%;
+            max-height: 46px;
+            min-height: 46px;
+            line-height: 46px;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
+            border-top-left-radius: 23px;
+            border-bottom-left-radius: 23px;
+            font-size: 14px;
+        }
+        .login .fourth a.button-clear.button-clear {
+            color: #eb5414;
+            background: #fff;
+            width: 100%;
+            max-height: 46px;
+            min-height: 46px;
+            line-height:44px;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
+            border-top-left-radius: 23px;
+            border-bottom-left-radius: 23px;
+            font-size: 14px;
+            border:2px solid #eb5414;
+        }
+        .login .third{
+            height: 46px;
+            margin-top: 36px;
+        }
+        .login .fourth{
+            margin-top: 20px;
+        }
+    </style>
+    <ion-content>
+
+        <div class="wrapper">
+            <div class="container">
+                <div class="first">
+
+
+                    <input id="phone"
+                           type="tel"
+                           ng-model="ms.info.mobile"
+                           placeholder="请输入手机号码">
+
+
+                </div>
+                <div class="first">
+
+                    <input id="password"
+                           type="tel"
+                           ng-model="ms.info.code"
+                           placeholder="请输入验证码">
+                    <a class="button button-clear" ng-click="ms.verify()" ng-bind="ms.paracont">发送验证码</a>
+
+                </div>
+                <div class="third" ng-click="ms.login()">
+                    <a class="button button-clear"  >登录</a>
+                </div>
+                <div class="fourth" ui-sref="register({insId:ms.insId})">
+                    <a class="button button-clear">申请入驻</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

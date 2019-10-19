@@ -1,0 +1,152 @@
+<ion-view view-title="订单详情" class="orderDetails details">
+
+    <style>
+        .details .first{
+
+        }
+        .details .first ul{
+            padding: 20px 16px;
+            color: #666;
+            background: #f2f2f2;
+        }
+        .details .first ul li{
+            height: 20px;
+            line-height: 20px;
+
+
+        }
+        .details .second .center{
+            margin: 0 16px;
+
+        }
+        .details .second{
+            padding: 0 16px;
+            padding-top: 28px;
+        }
+
+    </style>
+
+    <ion-content>
+
+        <div class="wrapper">
+            <div class="container">
+                <div class="first">
+                    <ul>
+                        <li>客户姓名 : {{ms.data.name}}</li>
+                        <li>手机号码 : {{ms.data.mobile}}</li>
+                    </ul>
+                </div>
+                <div class="second clear">
+                    <style>
+                        .details .second{
+
+                        }
+                        .details .second .top div p{
+                            height: 15px;
+                            line-height: 15px;
+                            text-align: right;
+                        }
+                        .details .second .top p:nth-of-type(1){
+                            color: #333;
+                        }
+                        .details .second .top p:nth-of-type(2){
+                            color: #999;
+                        }
+                        .details .second .top div {
+
+                            margin-top: 50px;
+                        }
+                        .details .second .top div:nth-of-type(1){
+                            margin-top: 0px;
+                        }
+                    </style>
+                    <div class="left top" style="font-size: 12px;">
+                        <div ng-repeat="data in ms.data.distributionOrderLogList">
+                            <p>{{data.createTime|date:"HH:mm"}}</p>
+                            <p>{{data.createTime|date:"yyyy-MM-dd"}}</p>
+                        </div>
+                    </div>
+                    <style>
+                        .details .second .center div {
+                            position: relative;
+
+                        }
+                        .details .second .center div .circle{
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 12px;
+                            background: #cdcdcd;
+                            position: relative;
+                            margin-top: 67px;
+                            z-index: 5;
+
+                        }
+                        .details .second .center div .line{
+                            position: absolute;
+                            top: 4px;
+                            left: 4px;
+                            width: 4px;
+                            height: 82px;
+                            background: #cdcdcd;
+
+                        }
+                        .details .second .center div:last-child .line{
+                            display: none;
+
+                        }
+                        .details .second .center div:nth-of-type(1) .circle{
+                            margin-top:3px;
+                        }
+                        .details .second .center div:nth-of-type(1) .circle.finish{
+                            width: 16px;
+                            height: 16px;
+                            background: #eb5414;
+                            margin-left: -2px;
+                        }
+                    </style>
+                    <div class="left center">
+                        <div ng-repeat="data in ms.data.distributionOrderLogList">
+                            <div class="circle" ng-class="{'finish':$index==0}">
+
+                            </div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <style>
+                        .details .second .bottom div{
+                            height: 30px;
+                            color: #666;
+                            font-size: 14px;
+                            margin-top: 50px;
+                        }
+                        .details .second .bottom div.finish{
+                            color: #eb5414;
+                        }
+                        .details .second .bottom div:nth-of-type(1){
+                            margin-top: 0px;
+                        }
+                    </style>
+                    <div class="left bottom" style=" width: 58%;">
+                        <div ng-repeat="data in ms.data.distributionOrderLogList" ng-class="{'finish':$index==0}">
+                            <div ng-if="data.event == '订单提交'">{{data.event}}<span>：{{data.optionUserName}}</span></div>
+                            <div ng-if="data.event == '分配跟单员'">{{data.event}}
+                                <p ng-if="data.followerName">{{data.followerName}}&nbsp;&nbsp;{{data.followerMobile}}</p>
+                                <span ng-if="!data.followerName">：无</span>
+                            </div>
+                            <div ng-if="data.event != '订单提交' && data.event != '分配跟单员'">
+                                {{data.event}}<span ng-if="data.eventResult">：{{data.eventResult}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="No-Content-Box" ng-hide="ms.data.distributionOrderLogList && ms.data.distributionOrderLogList.length!=0">
+                    <div class="No-Content-Text">
+                        <p class="fs18 margin-t-25">没有处理记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>

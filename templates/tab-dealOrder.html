@@ -1,0 +1,87 @@
+<ion-view view-title="我的预约记录" class="historyRecord record">
+    <style>
+        .record .first {
+
+
+
+        }
+        .record .first dl{
+
+
+
+        }
+        .record .first dt{
+            padding: 0 16px;
+            font-weight: normal;
+            height: 48px;
+            line-height: 48px;
+            background: #f2f2f2;
+        }
+        .record .first dd a{
+            box-sizing: border-box;
+            padding: 20px 16px;
+            display: block;
+            height: 101px;
+            border: 1px solid #f2f2f2;
+            overflow: hidden;
+            position: relative;
+        }
+        .record .first dd a.activated{
+            opacity: 0.5;
+        }
+        .record .first dd a ul li{
+            color: #666;
+            font-size: 12px;
+            height: 20px;
+            line-height: 20px;
+        }
+        .record .first dd a .state{
+            position: absolute;
+            top:-16px;
+            right: 16px;
+            color: #00c356;
+        }
+        .record .first dd a .state ol li:nth-of-type(1){
+            width: 80px;
+            height:80px;
+        }
+        .record .first dd a .state ol li:nth-of-type(1) img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+    <ion-content>
+        <div class="wrapper">
+            <div class="container">
+                <div class="first">
+                    <dl>
+                        <dd ng-repeat="data in ms.data">
+                            <a class="clear" ui-sref="orderDetails({id:data.id,insId:ms.insId})">
+                                <div class="state">
+                                    <ol>
+                                        <li ng-if="data.status == 2"><img src="img/record/state1.png" alt=""></li>
+                                        <li ng-if="data.status == 0 || data.status == 1"><img src="img/record/state2.png" alt=""></li>
+                                        <li ng-if="data.status == -1"><img src="img/record/state3.png" alt=""></li>
+                                    </ol>
+                                </div>
+                                <ul>
+                                    <li>客户姓名 : {{data.name}}</li>
+                                    <li>手机号码 : {{data.mobile}}</li>
+                                    <li>提交日期 : {{data.createTime|date:"yyyy-MM-dd"}}</li>
+                                </ul>
+                            </a>
+                            <div style="height: 10px;background-color: #f2f2f2"></div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="No-Content-Box" ng-hide="ms.data && ms.data.length!=0">
+            <div class="No-Content-Text">
+                <p class="fs18 margin-t-25">暂时没有预约信息</p>
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="ms.loadMore()" spinner="dots" immediate-check="fasle" distance="1%" ng-if="ms.canLoadMore"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

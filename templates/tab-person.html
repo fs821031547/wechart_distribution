@@ -1,0 +1,277 @@
+<ion-view view-title="个人中心" class="person">
+    <style>
+        .login .wrapper{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            /*background: #fffded url("img/denglv_bg.png") no-repeat center bottom / 100%;*/
+            /*justify-content: center;*/
+            /*align-items: center;*/
+        }
+        .login .container{
+            display: inline-block;
+            margin: 0 55px;
+            flex: 1;
+            margin-top: 100px;
+        }
+        .login .first{
+            height: 58px;
+            border-bottom: 1px solid #d3cdc1;
+            padding-top: 20px;
+            position: relative;
+        }
+        .login input[type="tel"]
+        {
+            background: transparent;
+            font-size: 14px;
+            color: #695e58;
+            padding-top: 0;
+        }
+        .login input[type="password"]
+        {
+            background: transparent;
+            font-size: 14px;
+            color: #695e58;
+            padding-top: 0;
+            display: inline-block;
+        }
+        .login .first a.button-clear.button-clear{
+            color: #fff;
+            background: #eb5414;
+            max-height: 30px;
+            min-height: 30px;
+            line-height: 30px;
+            border-bottom-right-radius: 15px;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            position: absolute;
+            right: 0;
+            font-size: 14px;
+        }
+        .login .third a.button-clear.button-clear{
+            color: #fff;
+            background: #eb5414;
+            width: 100%;
+            max-height: 46px;
+            min-height: 46px;
+            line-height: 46px;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
+            border-top-left-radius: 23px;
+            border-bottom-left-radius: 23px;
+            font-size: 14px;
+        }
+        .login .person .fourth a.button-clear.button-clear{
+            color: #eb5414;
+            background: transparent;
+            width: 100%;
+            max-height: 46px;
+            min-height: 46px;
+            line-height: 46px;
+            border: 1px solid #eb5414;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
+            border-top-left-radius: 23px;
+            border-bottom-left-radius: 23px;
+            font-size: 14px;
+        }
+        .login .third{
+            height: 46px;
+            margin-top: 36px;
+        }
+        .login .fourth{
+            margin-top: 20px;
+        }
+
+        .login .fourth a.button-clear.button-clear {
+            color: #eb5414;
+            background: #fff;
+            width: 100%;
+            max-height: 46px;
+            min-height: 46px;
+            line-height:44px;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
+            border-top-left-radius: 23px;
+            border-bottom-left-radius: 23px;
+            font-size: 14px;
+            border:2px solid #eb5414;
+        }
+        .person .first{
+            background: #eb5414;
+
+        }
+        .person .first dl.title{
+            padding: 20px 26px;
+            margin-bottom: 0;
+        }
+        .person .first dl.title dt{
+            height: 28px;
+            color: #fff;
+            line-height: 28px;
+            text-align: center;
+            position: relative;
+            font-weight: normal;
+            font-size: 18px;
+
+        }
+        .person .first dl.title dt span{
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            right: 0;
+            background: url("img/signOut.png") no-repeat center / 100%;
+        }
+        .person .first .share{
+            /*padding: 8px 0;*/
+            width: 166px;
+            height: 166px;
+            margin: 10px auto;
+            background: url("img/person/QRcode.png") no-repeat center bottom / 100%;
+            padding-top: 20px;
+            margin-top: 0;
+        }
+        .person .first .share dd{
+            width: 132px;
+            height: 132px;
+            margin: 0 auto;
+            background: green;
+            border-radius: 10px;
+
+        }
+        .person .first .share img{
+            display: block;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .person .first .pattern{
+            width: 100%;
+
+            background-image: linear-gradient(to bottom,#eb5414,#fff);
+        }
+        .person .first .pattern img{
+            width: 100%;
+            display: block;
+        }
+        .person .second{
+            padding: 0 26px ;
+        }
+        .person .second a{
+            display: block;
+            height: 51px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ececec;
+            color: #666666;
+        }
+        .person .second a.activated{
+            opacity: 0.5;
+        }
+        .person .second a ul{
+            padding: 15px 0;
+        }
+        .person .second  li:nth-of-type(1){
+            width: 20px;
+            height: 20px;
+            margin: 0 8px;
+            /*background: url("img/second1.png") no-repeat center / 100%;*/
+        }
+        .person .second li:nth-of-type(2){
+            width: 8px;
+            height: 12px;
+            margin-top: 4px;
+            /*background: url("img/guide.png") no-repeat center / 100%;*/
+        }
+        .person .second li:nth-of-type(3){
+            margin:0 0 0 36px;
+            line-height: 20px;
+            height:20px ;
+        }
+        .person .second  li:nth-of-type(1) img,.person .second li:nth-of-type(2) img{
+           width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+    <ion-content>
+        <div class="wrapper">
+            <div class="container">
+                <div class="first">
+                    <dl class="title">
+                        <dt>
+                            我的邀请二维码
+                            <span ng-click="ms.signOut()"></span>
+                        </dt>
+                    </dl>
+                    <dl class="share">
+                        <canvas style="display: none" id="drawing"></canvas>
+                        <img ng-show="ms.imgURI" ng-src="{{ms.imgURI}}">
+                    </dl>
+                    <dl>
+                        <dd class="tc pb10 cfff">长键二维码可保存到本地</dd>
+                    </dl>
+                    <dl class="pattern">
+                        <dd>
+                            <img src="img/person/pattern.png" alt="">
+                        </dd>
+                    </dl>
+                </div>
+                <div class="second">
+                    <a ui-sref="dealOrder({insId:ms.insId})">
+                        <ul>
+                            <li class="left">
+                                <img src="img/person/second1.png" alt="">
+                            </li>
+                            <li class="right">
+                                <img src="img/person/guide.png" alt="">
+                            </li>
+                            <li>
+                                我的预约记录
+                            </li>
+                        </ul>
+                    </a>
+                    <a ui-sref="historyrecord({insId:ms.insId})">
+                        <ul>
+                            <li class="left">
+                                <img src="img/person/second2.png" alt="">
+                            </li>
+                            <li class="right">
+                                <img src="img/person/guide.png" alt="">
+                            </li>
+                            <li>
+                               已成交的订单
+                            </li>
+                        </ul>
+                    </a>
+                    <a ui-sref="share({id:ms.id,type:1,insId:ms.insId})">
+                        <ul>
+                            <li class="left">
+                                <img src="img/person/second3.png" alt="">
+                            </li>
+                            <li class="right">
+                                <img src="img/person/guide.png" alt="">
+                            </li>
+                            <li>
+                                添加预约客户
+                            </li>
+                        </ul>
+                    </a>
+                    <a ui-sref="myWallet({insId:ms.insId})">
+                        <ul>
+                            <li class="left">
+                                <img src="img/person/second4.png" alt="">
+                            </li>
+                            <li class="right">
+                                <img src="img/person/guide.png" alt="">
+                            </li>
+                            <li>
+                                我的钱包
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

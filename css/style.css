@@ -1,0 +1,249 @@
+.popup-container.toast .popup-head,.popup-container.toast .popup-buttons{
+    display: none;
+}
+.popup-container .popup-body{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #eb5414;
+    overflow: hidden;
+    background: #eb5414;
+    color: #fff;
+    text-align: center;
+}
+.popup-container.toast .popup{
+    background-color: transparent;
+}
+.confirm.popup-container .popup{
+    border-radius: 8px;
+}
+.confirm.popup-container .popup strong{
+   color: #666;
+}
+.confirm .popup-buttons .button{
+    display: none;
+}
+.confirm .popup-buttons .button:last-child{
+    display: block;
+    margin-left: 25px;
+    margin-right: 25px;
+    background: #eb5414;
+    min-height: 44px;
+    border-radius: 22px 22px ;
+    font-weight: normal;
+    }
+
+.app-confirm .popup-head {
+
+    padding: 0;
+    background: linear-gradient(to bottom,#ffcc00,#fff);
+
+}
+.app-confirm .popup-head .popup-title {
+   height: 44px;
+    line-height: 44px;
+    /*background: url(../img/pattern.png) no-repeat center 15px  / 100%;*/
+    margin-top: 20px;
+}
+.app-confirm .popup-head .popup-title strong{
+   position: relative;
+    top: -15px;
+    font-size: 16px;
+}
+.app-confirm .popup-head{
+    border-bottom: none;
+}
+.app-confirm.popup-container .popup-body{
+    border: none;
+    border-radius: 0;
+    background: #fff;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    /*padding-top: 0;*/
+    padding-left: 26px;
+    padding-right: 26px;
+}
+.app-confirm.popup-container .popup-body div div:nth-last-child(1){
+    font-size: 14px;
+    margin-top: 10px;
+}
+.app-confirm .popup-buttons{
+    background: #fff;
+}
+.app-confirm .popup-buttons .button:first-child{
+    display: none;
+}
+.app-confirm .popup-buttons .button:last-child{
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    background: #ffcc00;
+    color: #000;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.app-confirm .popup{
+    border-radius: 20px;
+    overflow: hidden;
+}
+.app-show.app-confirm .popup-head{
+    height:74px;
+    background-image: linear-gradient(to bottom,#ffcc00,#fff);
+    /*background: url(../img/pattern.png) no-repeat  center 35px  / 100%;*/
+}
+.app-show.app-confirm .popup-head .popup-title{
+
+   background: transparent url(../img/pattern.png) no-repeat  center 45px  / 100%;;
+    height: 74px;
+    line-height: 50px;
+    margin-top: 0;
+}
+.app-show.popup-container .popup-body{
+    padding-top: 0;
+}
+/* 数字键盘 */
+.keyboardMargin { margin-bottom: 280px; }
+.my-number-keyboard{position: fixed; bottom: 0; width: 100%; display: block; height: 0; background-color: #f5f5f5; overflow: hidden; transition: .5s;}
+.my-number-keyboard a{ float: left; background-color: #f5f5f5; width: 33.33%; text-align: center; height: 60px; line-height: 60px; color: #333; font-weight: bold; font-size: 18px;
+    border-bottom: 1px solid #d7d7d7; border-right: 1px solid #d7d7d7; }
+.my-number-keyboard a:nth-of-type(3n){ border-right: none; }
+.my-number-keyboard a.activated{ background-color:rgba(0,0,0,0.1); }
+.my-number-keyboard .dark{ background-color:#e0e0e0; color: #979797; font-size: 28px; }
+.my-number-keyboard .dark.activated{ color: #000; }
+.my-number-keyboard .keyboard-hide{ justify-content: center; height: 30px; border: none; border-bottom: 1px solid #d7d7d7; width: 100%; text-align: center; line-height: 34px; }
+.my-number-keyboard .keyboard-hide.activated{ background-color:rgba(255,255,255,0.1); }
+.animate-hide{ height: 0; }
+.animate-show{ height: 270px; }
+/* .my-number-keyboard.ng-hide{ height: 0px; }
+.my-number-keyboard.ng-hide-remove-active { height: 270px; }
+.my-number-keyboard.ng-hide-add{ height: 270px; }
+.my-number-keyboard.ng-hide-add-active { height: 0px; }
+ */
+
+.set-wallet-checkbox{ position: absolute; right: 10px; top: 10px; }
+.No-Content-Box{z-index:9;  display: table;  width: 100%;  margin-top: 50%;   position: absolute;  top: 0;  right: 0;  bottom: 0;  left: 0;  overflow: hidden;}
+.No-Content-Text { display: table-cell;vertical-align: middle; text-align: center; color: #999;}
+
+.myInvite{  width: 100%;  background: #fff;  }
+.myInvite a{  text-decoration: none;  }
+.myInvite_content{  text-decoration: none;  }
+.myInvite_header{  margin: 0;  padding: 18px 0;background: #eb5414;  }
+.myInvite_header .people{  width: 50%;  height: 78px;  float: left;  display: flex;  flex-direction: column;  justify-content: center;  align-items: center;  }
+.myInvite_header .people a{  width: 100%;  display: flex;  flex-direction: column;  justify-content: center;  align-items: center;  }
+.myInvite_header p{  color: #fff;  font-size: 16px;  }
+.myInvite_header span{  color: #fff;  font-size: 16px;  }
+.myInvite_header .people i{  width: 32px;  height: 32px;  position: relative;  background: url("../img/add/yue.png") no-repeat center / 100%;  }
+.myInvite_header .total{ width: 50%;  height: 78px;  float: right;  border-left: 1px dashed #fff;  display: flex;  flex-direction: column;  justify-content: center;  align-items: center;  }
+.myInvite_header .total i{  width: 32px;  height: 32px;  background:url("../img/add/yinhangka.png") no-repeat center / 100%;  }
+.myInvite_header .total a{  width: 100%;  display: flex;  flex-direction: column;  justify-content: center;  align-items: center;  }
+
+.myWallet_nav {  margin: 0;  padding: 0 12px;  border-bottom: 1px solid #f0f0f0;  }
+.myWallet_nav_public{  float: left;  height: 60px;  display: flex;  flex-direction: column;  justify-content: center;  }
+.myWallet_nav dt{  float: left;  }
+.myWallet_nav dd{  float: right;  text-align: right;  }
+.myWallet_nav_left p {  height: 16px;  line-height: 16px;  color: #000;  font-size: 12px;  }
+.myWallet_nav_left span{  height: 16px;  line-height: 16px;  color: #000;  display: block;  font-size: 12px;  }
+.myWallet_nav_right p {  height: 16px;  line-height: 16px;  color: #777;  font-size: 12px;  }
+.myWallet_nav_right span{  height: 16px;  line-height: 16px;  color: #777;  display: block;  font-size: 12px;  }
+.myWallet_main_list{  margin: 0 0 0 12px;  padding: 0px 12px 0px 0;  border-bottom: 1px solid #f0f0f0;  box-sizing: border-box;  }
+.myWallet_main_list p{  color: #4a4a4a;  }
+.myWallet_main_list span{  color: #777;  font-size: 10px;  }
+.myWallet_main_list span.active{  color: #eb5414;  font-size: 12px;  }
+
+/* 余额 */
+.balance{ width: 100%; text-align: center; padding: 24px; }
+.balance .my-icon{ display: inline-block; margin: 40px 0 10px 0; width: 100px; height: 100px; font-size: 50px; background-color: #f90; line-height: 100px; color: #fff; border-radius: 50%; background: url("../img/add/yuEOne.png") no-repeat center / 92%}
+.balance p { margin: 0; color: #333; }
+.balance p.title { font-weight: bold; font-size: 18px; letter-spacing: 1px;color: #777 }
+.balance p.pire { font-weight: bold; font-size: 24px; margin: 10px 0 20px;color: #666666 }
+.balance > .f90{ color: #fff; background-color: #eb5414; }
+.balance > .f90.activated{ border: none; opacity: .7; }
+.balance > .f5.activated{ opacity: .8; }
+.balance > .f5{ background-color: #f5f5f5; color: #666666; border: 1px solid #ddd; }
+
+/* 提现 */
+.withdraw > .title{ background-color: #f5f5f5; color: #000; font-weight: bold; border: none; }
+.withdraw > .title.activated{ background-color: #f0f0f0; border: none; }
+.withdraw > .title > span{ float: right;  font-size: 14px; color: #485c74; }
+.withdraw > .title2{ padding: 10px 15px; color: #4a4a4a; }
+.withdraw > .price { padding: 0px 15px; width: 100%; position: relative; color: #666; }
+.withdraw > .price input{ padding: 10px 0; width: 100%; background-color: #fff !important; border-bottom: 1px solid #cecece; padding-left: 30px; font-size: 14px;margin-bottom: 10px }
+.withdraw > .price > .my-icon{ position: absolute; top: 4px; left: 20px; font-size: 24px;color: #999999 }
+.withdraw > .price > .all{ margin-top: 10px; font-size: 14px; color: #999}
+.withdraw > .price > .all > span{ color: #2d97f7; }
+.withdraw > .price > .ps{ text-align: center; margin-top: 20px; font-size: 14px; color: #999}
+
+
+.application{ background: #25232f;}
+.application .scroll{height: 100%;}
+.application .wrapper{width: 100%; height: 100%; position: relative;}
+.application .infdiv{width: 100%;}
+.application .first{margin: 0 35px;  border-radius: 22px;  overflow: hidden;  }
+.application .first input{ padding-top:0;  height: 44px;  padding-left: 22px;  padding-right: 22px;  width: 100%;  color: #000;  }
+.application input::-webkit-input-placeholder{color: #000;  }
+.application .second{margin: 0 35px;  border-radius: 22px;  overflow: hidden;  display: block;  background: #ffcc00;  height: 44px;  text-align: center;  line-height: 44px;  font-size: 18px;}
+.application .cwg{background: #ffcc00;  height: 44px;  text-align: center;  line-height: 44px;position: absolute;
+    top:0;right: 0; display: inline-block;padding: 0 10px;}
+.application .third{margin: 0 35px;  color:#ffcc00;  height: 44px;  text-align: center;  line-height: 44px;  }
+.application .margin-top-bottom-14{  margin-bottom: 14px;  margin-top: 14px;   position: relative;}
+
+.proEbd .scroll{display: table; text-align: center;height: 100%;width: 100%}
+.proEbd .scroll .cntTxt{vertical-align: middle;display: table-cell;}
+.proEbd .scroll .cntTxt .pt0{margin-bottom: 15px;}
+.proEbd .scroll .cntTxt .pt1{font-size: 18px; margin-bottom: 5px;}
+.proEbd .scroll .cntTxt .pt2{font-size: 18px; margin-bottom:35px;}
+.proEbd .scroll .cntTxt .pt3{font-size: 24px;color: #e62424;}
+
+
+.Speech{ overflow: hidden;width: 100%;}
+.Speech .Context{padding: 15px;overflow: hidden;color: #666;}
+.Speech .Context img{width: 100%; vertical-align: middle;}
+.Speech .Context p{color: #666; margin-bottom:5px;}
+.Speech .forw{ margin: 0 15px;overflow: hidden; text-align: center; border-top: 1px dashed #eee; padding-top:8px;}
+.Speech .forw a{ color: #999;font-size: 12px; display: inline-block; }
+.Speech .forw a.activated{color: #e62424;}
+.advisory-but{position: fixed;bottom: 0; left: 0; right: 0; width: 100%;  }
+.advisory-but .button{background-color: #e62424; color: #fff;display: block; clear: both; width: 100%; border-radius: 0;}
+
+
+
+
+.modal-wis {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+
+.modal-wis  .advbanWin {
+    position: relative;
+    margin: 0 auto;
+    vertical-align: middle;
+    top: 50%;
+    margin-top: -130px;
+    width: 280px;
+    height: 260px;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.modal-wis  .advbanWin .extbut{position: absolute;  right:5px; top:2px;padding: 0 6px; line-height: normal; min-height: auto;}
+.modal-wis  .advbanWin .button-icon.icon:before{font-size:28px;padding: 0;margin:0;line-height: normal;}
+.modal-wis  .advbanWin h2{font-size: 18px; text-align: center;  padding:0;  margin:0;font-weight:500; height: 50px; line-height: 50px; padding-top: 10px; margin-bottom: 15px;}
+.modal-wis  .advbanWin .item-input{padding: 4px 10px 6px 10px; border-radius: 4px; border: 1px solid #ddd; margin-bottom: 10px;}
+.modal-wis  .advbanWin .input-label{font-size: 14px; padding: 0 10px 0 0;}
+.modal-wis  .advbanWin  .item-input input[type=text]{padding: 0;}
+.modal-wis  .advbanWin .button.button-block{margin-top: 20px;}
+
+
+.modal-backdrop {  position: fixed;  top: 0;  right: 0;  bottom: 0;  left: 0;  z-index: 1040;  background-color: #000;  opacity:.6;  }

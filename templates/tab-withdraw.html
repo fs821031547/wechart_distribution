@@ -1,0 +1,58 @@
+<ion-view view-title="提现">
+    <ion-content>
+        <style>
+            .withdraw_card {
+
+            }
+            .withdraw_card .item{
+                border: none;
+                background: #f5f5f5;
+            }
+            .withdraw_card .item span{
+                color: #2d97f7;
+            }
+            .withdraw .withdraw_button{
+                background: #eb5414;
+                color: #fff;
+            }
+            .Toast_popup .popup{
+                background: #eb5414;
+                opacity: 0.6;
+            }
+            .Toast_popup .popup .popup-head{
+                border: 0;
+            }
+            .Toast_popup h3{
+                color: #f5f5f5;
+            }
+        </style>
+        <div class="withdraw_card">
+            <ion-list>
+                <ion-item ng-click="toggert()">
+                    转账到银行卡
+                    <span class="item-note">{{ms.currentCart.bankName}}({{ms.currentCart.Last4}})</span>
+                </ion-item>
+
+            </ion-list>
+        </div>
+        <div class="withdraw" ng-class="{keyboardMargin:ms.isKeyShow}">
+            <a class="item title" ng-repeat="topic in ms.walletBank" ng-click="SHOW(topic.id)" ng-show="ms.isTrue">转到银行卡<span>{{topic.bankName}}({{topic.cardNo.slice(-4)}})</span></a>
+            <div class="title2">提现金额</div>
+            <div class="price">
+                <input type="text" ng-model="ms.price"  readonly="readonly" placeholder="请输入提现金额" ng-click="ms.isKeyShowfn(true)" >
+                <span class="ion-social-yen my-icon"></span>
+                <div class="all">可提现金额 {{ms.walletBalance|number:2}} 元，<span ng-click="ms.clickAll()">全部提现</span></div>
+                <div class="all" ng-if="ms.mnyFrozen">冻结金额 {{ms.mnyFrozen|number:2}} 元（提现中）</div>
+                <div class="ps">3天内到帐</div>
+                <button class="button button-block withdraw_button" ng-click="ms.getMoney()">提现</button>
+            </div>
+        </div>
+    </ion-content>
+    <div class="my-number-keyboard">
+        <button class="keyboard-hide" ng-click="ms.isKeyShowfn(false)"><span class="ion-chevron-down"></span></button>
+        <a ng-repeat="keyboard in ms.keyboard" ng-click="ms.number(keyboard)">{{keyboard}}</a>
+        <a ng-click="ms.number(0)">0</a>
+        <a ng-click="ms.number('.')">.</a>
+        <a class="dark" ng-click="ms.number('del')"><span class="ion-backspace-outline"></span></a>
+    </div>
+</ion-view>

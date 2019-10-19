@@ -1,0 +1,32 @@
+<ion-view view-title="阳光教练">
+    <ion-content>
+         <div class="Speech">
+              <div class="Context">
+                  <div ng-bind-html="ms.data.content"></div>
+                  <p ng-repeat="data in ms.data.imgList"><img ng-src="{{data}}" alt=""></p>
+              </div>
+         </div>
+        <div style="height:64px;"></div>
+    </ion-content>
+
+    <div ng-click="ms.show()" class="advisory-but">
+        <button class="button">学车咨询</button>
+    </div>
+
+    <div ng-if="ms.showModel" class="modal-wis">
+        <div class="advbanWin">
+          <h2>提交后教练将与您联系</h2>
+            <label class="item item-input">
+                <span class="input-label">您的姓名</span>
+                <input type="text" ng-model="ms.name" placeholder="请输入真实姓名">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">联系方式</span>
+                <input type="text" ng-model="ms.mobile" placeholder="请输入手机号码">
+            </label>
+            <button ng-click="ms.submit()" class="button button-block button-assertive">提交</button>
+            <a ng-click="ms.show()" class="button button-icon icon ion-android-close extbut"></a>
+        </div>
+    </div>
+    <div ng-if="ms.showModel" class="modal-backdrop"></div>
+</ion-view>

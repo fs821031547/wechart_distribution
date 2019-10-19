@@ -1,0 +1,91 @@
+<ion-view view-title="我的成交记录" class="historyRecord record dealOrder">
+    <style>
+        .record .first {
+
+
+
+        }
+        .record .first dl{
+
+
+
+        }
+        .record .first dt{
+            padding: 0 16px;
+            font-weight: normal;
+            height: 48px;
+            line-height: 48px;
+            background: #f2f2f2;
+        }
+        .record .first dd a{
+            box-sizing: border-box;
+            padding: 20px 16px;
+            display: block;
+            height: 101px;
+            border: 1px solid #f2f2f2;
+            overflow: hidden;
+            position: relative;
+        }
+        .record .first dd a.activated{
+            opacity: 0.5;
+        }
+        .record .first dd a ul li{
+           color: #666;
+            font-size: 12px;
+            height: 20px;
+            line-height: 20px;
+        }
+        .record.dealOrder .first dd a .state li{
+            width: 60px;
+            height: 60px;
+        }
+        .record.dealOrder .first dd a .state li img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .record.dealOrder .first dd a .Arrow {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+    </style>
+    <ion-content>
+        <div class="wrapper">
+            <div class="container">
+                <div class="first">
+                    <dl ng-repeat="month in ms.formatData">
+                        <dt class="clear">
+                            <span class="left">{{month.year}}年{{month.month}}月</span>
+                            <span class="right">累计成交{{month.sum}}单</span>
+                        </dt>
+                        <dd ng-repeat="data in month.childResult">
+                            <a class="clear"  ui-sref="orderDetails({id:data.id,insId:ms.insId})">
+                                <div class="right Arrow">
+                                    <img src="img/person/guide2.png" alt="">
+                                </div>
+                                <div class="state right">
+                                    <ol>
+                                        <li ng-if="data.status == 2"><img src="img/record/state1.png" alt=""></li>
+                                        <li ng-if="data.status == 0 || data.status == 1"><img src="img/record/state2.png" alt=""></li>
+                                        <li ng-if="data.status == -1"><img src="img/record/state3.png" alt=""></li>
+                                    </ol>
+                                </div>
+                                <ul>
+                                    <li>客户姓名 : {{data.name}}</li>
+                                    <li>手机号码 : {{data.mobile}}</li>
+                                    <li>提交日期 : {{data.createTime|date:"yyyy-MM-dd"}}</li>
+                                </ul>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="No-Content-Box" ng-hide="ms.data && ms.data.length!=0">
+            <div class="No-Content-Text">
+                <p class="fs18 margin-t-25">暂时没有成交记录</p>
+            </div>
+        </div>
+        <ion-infinite-scroll on-infinite="ms.loadMore()" spinner="dots" immediate-check="fasle" distance="1%" ng-if="ms.canLoadMore"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

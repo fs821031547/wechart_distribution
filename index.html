@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>阳光学车</title>
+
+    <!--<link rel="manifest" href="manifest.json">-->
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link rel="stylesheet" href="lib/ionic/css/ionic.min.css">
+    <link rel="stylesheet" href="css/public.css?t=2019011418">
+    <link rel="stylesheet" href="css/style.css?t=2019011418">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.min2.js"></script>
+    <script src="lib/ionic/js/jquery.min.1.11.1.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js?t=2019011418"></script>
+    <script src="js/app-define.js?t=2019011418"></script>
+    <script src="js/routers.js?t=2019011418"></script>
+    <script src="js/qrcode.js?t=2019011418"></script>
+
+    <!--<script src="js/controllers.js"></script>-->
+    <script src="js/controllers/person.js?t=2019011418"></script>
+    <script src="js/controllers/historyrecord.js?t=2019011418"></script>
+    <script src="js/controllers/orderDetails.js?t=2019011418"></script>
+    <script src="js/controllers/dealOrder.js?t=2019011418"></script>
+    <script src="js/controllers/share.js?t=2019011418"></script>
+    <script src="js/controllers/poster.js?t=2019011418"></script>
+    <script src="js/controllers/register.js?t=2019011418"></script>
+    <script src="js/controllers/protocol.js?t=2019011418"></script>
+    <script src="js/controllers/login.js?t=2019011418"></script>
+    <script src="js/controllers/myWallet.js?t=2019011418"></script>
+    <script src="js/controllers/bankCard.js?t=2019011418"></script>
+    <script src="js/controllers/addBankCard.js?t=2019011418"></script>
+    <script src="js/controllers/balance.js?t=2019011418"></script>
+    <script src="js/controllers/withdraw.js?t=2019011418"></script>
+    <script src="js/controllers/alert.js?t=2019011418"></script>
+    <script src="js/controllers/speakSkill.js?t=2019011418"></script>
+
+      <!--<script src="js/service.js"></script>-->
+    <script src="js/services/constants.js?t=2019011418"></script>
+    <script src="js/services/loading.js?t=2019011418"></script>
+    <script src="js/services/conn.js?t=2019011418"></script>
+    <script src="js/services/utils.js?t=2019011418"></script>
+    <script src="js/services/user.js?t=2019011418"></script>
+    <script src="js/services/myFilters.js?t=2019011418"></script>
+
+  </head>
+  <body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <div style="position: fixed;z-index: 999" ng-if="ipName">{{ipName}}_version: 2019011418</div>
+    <ion-nav-view>
+
+    </ion-nav-view>
+  </body>
+</html>

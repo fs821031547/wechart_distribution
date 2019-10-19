@@ -1,0 +1,51 @@
+<ion-view view-title="我的钱包" cache-view='true'>
+	<ion-content style="background: #f5f5f5;width: 100%;">
+		<div class="myInvite myWallet">
+			<dl class="myInvite_header clear">
+				<dt class="people">
+					<a ui-sref="balance({insId:ms.insId})">
+						<i></i>
+						<p>余额</p>
+						<span>￥{{ms.walletBalance/100 | number:2}}</span>
+					</a>
+				</dt>
+				<dd class="total">
+					<a ui-sref="bankCard({insId:ms.insId})">
+						<i></i>
+						<p>银行卡</p>
+						<span>{{ms.walletBankNum}}张</span>
+					</a>
+				</dd>
+			</dl>
+			<div ng-repeat="month in ms.formatData">
+				<dl class="myWallet_nav clear">
+					<dt class="myWallet_nav_left myWallet_nav_public">
+					<p>交易记录</p>
+					<span>{{month.year}}年{{month.month}}月</span>
+					</dt>
+					<dd class="myWallet_nav_right myWallet_nav_public">
+						<p>支出 ￥{{month.expenditure/100 | number:2}}</p>
+						<span>收入 ￥{{month.income/100 | number:2}}</span>
+					</dd>
+				</dl>
+				<div class="myWallet_main" ng-repeat="data in month.childResult">
+					<dl class="myWallet_nav clear myWallet_main_list">
+						<dt class="myWallet_nav_left myWallet_nav_public">
+						<p>{{data.transactionTypeName}}</p>
+						<span>{{data.transactionTime|date:"yyyy-MM-dd HH:mm"}}</span>
+						</dt>
+						<dd class="myWallet_nav_right myWallet_nav_public">
+							<span class="active">{{data.operation}}{{data.transactionMny/100 | number:2}}</span>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div ng-hide="ms.data && ms.data.length!=0" class="No-Content-Box">
+				<div class="No-Content-Text">
+					<p class="fs18 margin-t-25">暂无交易记录</p>
+				</div>
+			</div>
+		</div>
+		<ion-infinite-scroll on-infinite="ms.loadMore()" spinner="dots" immediate-check="false" distance="1%" ng-show="ms.canLoadMore"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

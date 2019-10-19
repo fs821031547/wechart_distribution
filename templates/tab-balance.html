@@ -1,0 +1,12 @@
+<ion-view view-title="余额" cache-view='true'>
+    <ion-content>
+    	<div class="balance">
+    		<span class="my-icon"></span>
+    		<p class="title">我的余额</p>
+    		<p class="pire">¥ {{ms.walletBalance/100 | number:2}}</p>
+			<button class="button button-block f5" ui-sref="withdraw({insId:ms.insId})">
+			  提&nbsp;&nbsp;&nbsp;现
+			</button>
+    	</div>
+    </ion-content>
+</ion-view>

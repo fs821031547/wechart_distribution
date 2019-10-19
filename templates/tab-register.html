@@ -1,0 +1,107 @@
+<ion-view view-title="注册" class="application2">
+    <style>
+     .application2 .wrapper{padding-top: 60px;}
+     .application2 .container {
+         margin: 0 15%;
+         flex: 1;
+     }
+     .application2 .first {
+         height: 58px;
+         border-bottom: 1px solid #d3cdc1;
+         padding-top: 20px;
+         position: relative;
+     }
+     .application2 .wrapper input[type="tel"] {
+         background: transparent;
+         font-size: 14px;
+         color: #695e58;
+         padding-top: 0;
+         width: 100%;
+     }
+     .application2 .third {
+         height: 46px;
+         margin-top: 36px;
+     }
+     .application2 .third a.button-clear.button-clear {
+         color: #fff;
+         background: #eb5414;
+         width: 100%;
+         max-height: 46px;
+         min-height: 46px;
+         line-height: 46px;
+         border-bottom-right-radius: 23px;
+         border-top-right-radius: 23px;
+         border-top-left-radius: 23px;
+         border-bottom-left-radius: 23px;
+         font-size: 14px;
+     }
+     .application2 .select select{
+         line-height: 34px;
+         color: #695e58;
+         border: 0 none;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         font-size: 14px;
+         cursor: pointer;
+         text-overflow: '';
+         white-space: nowrap;
+         width: 100%;
+         background-color: #fff;
+     }
+
+     .application2 .select:after {
+         z-index: 2;
+         position: absolute;
+         top:29px;
+         right:6px;
+         color: #fff;
+         content: "\f123";
+         display: inline-block;
+         font-family: "Ionicons";
+         speak: none;
+         font-style: normal;
+         font-weight: normal;
+         font-variant: normal;
+         text-transform: none;
+         text-rendering: auto;
+         line-height: 1;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
+     }
+     .application2 .select:before{
+         display: block;
+         z-index: 1;
+         position: absolute;
+         top:23px;
+         right:0px;
+         width:24px;
+         height:24px;
+         border-radius: 100%;
+         background-color: #eb5414;
+         content: "";
+     }
+    </style>
+    <ion-content>
+
+        <div class="wrapper">
+            <div class="container">
+                  <div class="first">
+                   <input id="name" type="text" placeholder="请输入姓名" ng-model="ms.user.name">
+                  </div>
+                <div class="first">
+                    <input id="mobile" type="tel" placeholder="请输入手机号码" ng-model="ms.user.mobile">
+                </div>
+                <div class="first">
+                    <input id="shopName" type="text" placeholder="请输入店面名称" ng-model="ms.user.shopName">
+                </div>
+                <div class="first">
+                    <input id="shopAddress" type="text" placeholder="请输入详细地址" ng-model="ms.user.shopAddress">
+                </div>
+                <div class="third" ng-click="ms.submit()">
+                    <a class="button button-clear">提交</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

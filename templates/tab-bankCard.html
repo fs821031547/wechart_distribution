@@ -1,0 +1,102 @@
+<ion-view view-title="银行卡" cache-view='true'>
+    <ion-content class="bankCard_bg">
+        <style>
+            .addBankCard{
+
+            }
+            .addBankCard .item{
+
+                padding: 0;
+                border: 0;
+                background: #ed7438;
+                margin: 15px 15px 0;
+                padding: 11px 0;
+                border-radius: 10px;
+                color: #fff;
+            }
+            .addBankCard p{
+                float: left;
+                margin: 0;
+                padding: 0;
+            }
+            .addBankCard .addBankCard_img{
+                margin: 0 8px 0 8px;
+                height: 72px;
+            }
+            .addBankCard .addBankCard_right{
+                height: 72px;
+            }
+            .addBankCard i{
+                height:50px;
+                width: 50px;
+                display: block;
+                border-radius: 50px;
+                background: green;
+                display: none;
+            }
+            .addBankCard h2{
+               font-size: 14px;
+                margin: 0;
+                padding: 0;
+                color: #fff;
+            }
+            .addBankCard b{
+                font-size: 10px;
+                margin: 0;
+                padding: 0;
+                font-weight: 200;
+            }
+            .addBankCard strong{
+                display: block;
+                font-size: 18px;
+            }
+            .addBankCard em{
+               margin-right: 10px;
+            }
+            .addBankCard .addBankCard_info{
+                height: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .addBankCard_addCard{
+                height: 44px;
+                background: #eb5414;
+                text-align: center;
+                line-height: 44px;
+                margin:15px;
+                border-radius: 10px;
+                font-weight: 700;
+                letter-spacing: 2px;
+                color: #fff;
+                font-size: 14px;
+            }
+
+        </style>
+        <div class="addBankCard">
+            <ion-list>
+                <ion-item ng-repeat="item in ms.walletBank">
+                    <p class="item-left addBankCard_img"><i></i></p>
+                    <div class="addBankCard_right" >
+                        <div class="addBankCard_info">
+                            <h2>{{item.bankName}}</h2>
+                            <b ng-if="item.cardType == 'DC'">储蓄卡：{{item.bankName}}</b>
+                            <b ng-if="item.cardType == 'CC'">信用卡：{{item.bankName}}</b>
+                            <b ng-if="item.cardType == 'SCC'">准贷记卡：{{item.bankName}}</b>
+                            <b ng-if="item.cardType == 'PC'">预付费卡：{{item.bankName}}</b>
+                        </div>
+                        <strong>
+                            <em>****</em>
+                            <em>****</em>
+                            <em>****</em>
+                            <em>{{item.cardNo}}</em>
+                        </strong>
+                    </div>
+                </ion-item>
+            </ion-list>
+            <div class="addBankCard_addCard" ui-sref="addBankCard({insId:ms.insId})">
+                <botton class="bottom item-center title white">添加银行卡</botton>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-view view-title="预约报名" class="application">
+    <ion-content>
+        <div class="wrapper" id="themeBack" ng-style="ms.style" style="background: top center no-repeat;background-size:100%; ">
+
+        </div>
+    </ion-content>
+    <ion-footer-bar style="padding: 0; height: auto;background-color: transparent;padding-bottom:20px;border: transparent; background-image:none;">
+        <div class="infdiv">
+            <div class="first">
+                <input type="text" placeholder="请输入姓名" ng-model="ms.user.name">
+            </div>
+            <div class="first margin-top-bottom-14">
+                <input type="tel" placeholder="请输入手机号码" ng-model="ms.user.mobile">
+                <a ng-if="ms.data.wxCodeSwitch==1" class="cwg" ng-click="ms.sendCode()">
+                    {{ms.paracont}}
+                </a>
+            </div>
+            <div ng-hide="ms.data.wxCodeSwitch==0" class="first margin-top-bottom-14">
+                <input type="text" placeholder="请输入验证码" ng-model="ms.user.code">
+            </div>
+            <a class="second" ng-click="ms.submit()">
+                提 交
+            </a>
+            <div class="third">
+                推荐人 : {{ms.data.name}}
+            </div>
+        </div>
+    </ion-footer-bar>
+</ion-view>

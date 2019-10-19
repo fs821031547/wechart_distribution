@@ -1,0 +1,102 @@
+<ion-view view-title="预约报名" class="application">
+    <style>
+        .application{ background: #25232f;}
+        .application .scroll{
+            width: 100%;
+        }
+        .application .wrapper{
+            width: 100%;
+        }
+        .application .container{
+            width: 100%;
+
+            position: relative;
+        }
+
+        .application .first{
+            margin: 0 55px;
+            border-radius: 22px;
+            overflow: hidden;
+        }
+        .application .first input{
+            padding-top:0;
+            height: 44px;
+            padding-left: 22px;
+            padding-right: 22px;
+            width: 100%;
+            color: #000;
+        }
+        .application input::-webkit-input-placeholder{ /*WebKit browsers*/
+            color: #000;
+        }
+        .application .second{
+            margin: 0 55px;
+            border-radius: 22px;
+            overflow: hidden;
+            display: block;
+            background: #ffcc00;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            font-size: 18px;
+        }
+        .application .second2{
+            border-radius: 22px;
+            overflow: hidden;
+            display: block;
+            background: #ffcc00;
+            height:30px;
+            text-align: center;
+            line-height:30px;
+            font-size:12px;
+            width: 140px;
+            margin: 0 auto;
+        }
+        .application .third{
+            padding-top:40px;
+            padding-bottom:5px;
+            color:#aaaaac;
+            text-align: center;
+        }
+        .application .container .infdiv{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .application .Banner{margin-bottom:40px;}
+        .application .Banner img{width: 100%; }
+        .application .margin-top-bottom-14{
+            margin-bottom: 14px;
+            margin-top: 14px;
+        }
+    </style>
+    <ion-content>
+
+        <div class="wrapper">
+            <div class="container">
+                <div class="Banner"><img src="img/application/app1.jpg"></div>
+                <div class="infdiv">
+                    <div class="first">
+                        <input type="text" placeholder="请输入姓名" ng-model="ms.name">
+                    </div>
+                    <div class="first margin-top-bottom-14">
+                        <input type="tel" placeholder="请输入手机号码" ng-model="ms.mobile">
+                    </div>
+                    <a class="second" ng-click="ms.submit()" style="margin-bottom:15px;">
+                        提 交
+                    </a>
+
+                    <a class="second2" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.ygxc.student">
+                        去下载阳光学车APP
+                    </a>
+                    <div style="padding:10px 0; color: #fff; text-align: center;">
+                        更多选择，尽在阳光学车！
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
